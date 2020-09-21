@@ -1,0 +1,23 @@
+body {
+	background-color: #ffcccc;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 20px auto;
+	border: 2px solid #ffcccc;
+}
+
+table tr td {
+	height: 80px;
+	width: 80px;
+	border: 1px solid #ff4d4d;
+	background-color: #ffe6e6;
+	font-size: 30px;
+	text-align: center;
+}
+
+table tr td:hover {
+	background-color: #ffffff;
+	cursor: pointer;
+}
