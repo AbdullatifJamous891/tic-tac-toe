@@ -1,3 +1,6 @@
+*{
+	box-sizing: border-box;
+}
 body {
 	background-color: #ffcccc;
 }
@@ -19,5 +22,37 @@ table tr td {
 
 table tr td:hover {
 	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.winner_bar{
+	background-color: #ff4d4d;
+	height: 50px;
+	width: 240px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 20px auto;
+	padding-top: 15px;
+	border: 3px groove #ff8080;
+	display: none;
+}
+
+.replay_btn {
+	background-color: #ff4d4d;
+	height: 50px;
+	width: 240px;
+	text-align: center;
+	margin: 20px auto;
+	padding: auto;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: bold;
+	border: 2px solid #ffffff;
+}
+
+.replay_btn:hover{
+	background-color: #ff1a1a;
 	cursor: pointer;
 }
