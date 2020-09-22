@@ -4,10 +4,22 @@ const playerHit = (element_id)=> {
 	if(box_content == ''){
 		box.innerHTML = "X"
 	}
+
+	const check = checkWinner();
+	if(Object.keys(check).length != 0){
+
+		document.getElementById(check['boxes_ids'][0]).style.backgroundColor = '#ff00ff';
+		document.getElementById(check['boxes_ids'][1]).style.backgroundColor = '#ff00ff';
+		document.getElementById(check['boxes_ids'][2]).style.backgroundColor = '#ff00ff';
+
+		document.getElementById('winner').textContent = 'Winner: ' + check['winner']
+		document.getElementById('winner').style.display = 'block';
+
+	}
 }
 
 const replay = ()=> {
-
+	location.reload();
 }
 
 const checkWinner = ()=> {
@@ -24,31 +36,34 @@ const checkWinner = ()=> {
 	var box9 = document.getElementById("box9").textContent;
 
 	//check rows
-	if((box1 == box2) && (box2 == box3)){
+	if((box1 == box2) && (box2 == box3) && box1 != ''){
 		return {'winner': box1, 'boxes_ids': ['box1','box2','box3']};
 	} 
-	else if ((box4 == box5) && (box5 == box6)){
+	else if ((box4 == box5) && (box5 == box6) && box4 != ''){
 		return {'winner': box4, 'boxes_ids': ['box4','box5','box6']};
 	} 
-	else if ((box7 == box8) && box8 == box9){
+	else if ((box7 == box8) && (box8 == box9) && box7 != ''){
 		return {'winner': box7, 'boxes_ids': ['box7','box8','box9']};
 	}
 	//check columns
-	else if((box1 == box4) && (box4 == box7)){
+	else if((box1 == box4) && (box4 == box7) && box1 != ''){
 		return {'winner': box1, 'boxes_ids': ['box1','box4','box7']};
 	} 
-	else if ((box2 == box5) && (box5 == box8)){
+	else if ((box2 == box5) && (box5 == box8) && box2 != ''){
 		return {'winner': box2, 'boxes_ids': ['box2','box5','box8']};
 	} 
-	else if ((box3 == box6) && box6 == box9){
+	else if ((box3 == box6) && (box6 == box9) && box3 != ''){
 		return {'winner': box3, 'boxes_ids': ['box3','box6','box9']};
 	}
 	//check diagonals
-	else if((box1 == box5) && (box5 == box9)){
+	else if((box1 == box5) && (box5 == box9) && box1 != ''){
 		return {'winner': box1, 'boxes_ids': ['box1','box5','box9']};
 	} 
-	else if((box3 == box5) && (box3 == box7)){
+	else if((box3 == box5) && (box3 == box7) && box3 != ''){
 		return {'winner': box3, 'boxes_ids': ['box3','box5','box7']};
+	}
+	else {
+		return {}
 	}
 
 
