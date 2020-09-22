@@ -2,7 +2,7 @@
 
 #a popular game
 
-#this game has developed by using a vanilla javascrip, html, css
+#this game has developed using a vanilla javascrip, html, css
 
 #in this game there are player(Human) against Computer
 
